@@ -1,19 +1,18 @@
 from turtle import *
 
 class Disk():
-    def __init__(name,x,y,height,width,color):
+    def __init__(self,name,x,y,height,width):
         self.name = name
         self.x = x
         self.y = y
         self.height = height
         self.width = width
-        self.color = color
     
     def showdisk(self):
         pu()
         goto(self.x,self.y)
         pd()
-        fillcolor(self.color)
+        fillcolor("red")
         begin_fill()
         fd(self.width/2)
         lt(90)
@@ -27,15 +26,16 @@ class Disk():
         end_fill()
 
     def newpos(self,x,y):
-        cleardisk()
+        self.cleardisk()
         self.x = x
         self.y = y
-        showdisk()
+        self.showdisk()
 
-    def cleardisk():
+    def cleardisk(self):
         pu()
         goto(self.x,self.y)
         pd()
+        pencolor("white")
         fillcolor("white")
         begin_fill()
         fd(self.width/2)
